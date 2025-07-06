@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AutoVault - DeFi Yield Optimization Protocol</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-brand">
+          <div class="logo">
+            <div class="logo-icon">🏦</div>
+            <span class="logo-text">AutoVault</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#dashboard" class="nav-link active">Dashboard</a>
+          <a href="#strategies" class="nav-link">Strategies</a>
+          <a href="#governance" class="nav-link">Governance</a>
+          <a href="#analytics" class="nav-link">Analytics</a>
+        </div>
+        <div class="nav-actions">
+          <div class="wallet-info">
+            <span class="wallet-balance">1,234.56 MASSA</span>
+            <button class="wallet-btn">0x1234...5678</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Autonomous DeFi Yield Optimization</h1>
+          <p class="hero-subtitle">Maximize your returns with AI-powered strategies on the Massa Network</p>
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-value">$2.4M</div>
+              <div class="stat-label">Total Value Locked</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">18.7%</div>
+              <div class="stat-label">Average APY</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">1,247</div>
+              <div class="stat-label">Active Users</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Section -->
+      <section id="dashboard" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Your Portfolio</h2>
+            <div class="portfolio-value">
+              <span class="portfolio-amount">$12,456.78</span>
+              <span class="portfolio-change positive">+5.2% (24h)</span>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <!-- Deposit Card -->
+            <div class="card deposit-card">
+              <div class="card-header">
+                <h3 class="card-title">Deposit Assets</h3>
+                <div class="card-icon">💰</div>
+              </div>
+              <div class="card-content">
+                <div class="input-group">
+                  <label class="input-label">Select Asset</label>
+                  <select class="input-select" id="assetSelect">
+                    <option value="massa">MASSA</option>
+                    <option value="usdc">USDC</option>
+                    <option value="usdt">USDT</option>
+                    <option value="eth">ETH</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label class="input-label">Amount</label>
+                  <div class="input-wrapper">
+                    <input type="number" class="input-field" placeholder="0.00" id="depositAmount">
+                    <button class="input-max">MAX</button>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label class="input-label">Risk Profile</label>
+                  <div class="risk-selector">
+                    <button class="risk-btn active" data-risk="conservative">Conservative</button>
+                    <button class="risk-btn" data-risk="balanced">Balanced</button>
+                    <button class="risk-btn" data-risk="aggressive">Aggressive</button>
+                  </div>
+                </div>
+                <button class="btn btn-primary deposit-btn">Deposit & Optimize</button>
+              </div>
+            </div>
+
+            <!-- Portfolio Overview -->
+            <div class="card portfolio-card">
+              <div class="card-header">
+                <h3 class="card-title">Portfolio Allocation</h3>
+                <div class="card-icon">📊</div>
+              </div>
+              <div class="card-content">
+                <div class="allocation-chart">
+                  <div class="chart-container">
+                    <canvas id="allocationChart" width="200" height="200"></canvas>
+                  </div>
+                  <div class="allocation-legend">
+                    <div class="legend-item">
+                      <div class="legend-color" style="background: #6366f1;"></div>
+                      <span>Liquidity Pools (45%)</span>
+                    </div>
+                    <div class="legend-item">
+                      <div class="legend-color" style="background: #10b981;"></div>
+                      <span>Lending (30%)</span>
+                    </div>
+                    <div class="legend-item">
+                      <div class="legend-color" style="background: #f59e0b;"></div>
+                      <span>Staking (25%)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Active Strategies -->
+            <div class="card strategies-card">
+              <div class="card-header">
+                <h3 class="card-title">Active Strategies</h3>
+                <div class="card-icon">⚡</div>
+              </div>
+              <div class="card-content">
+                <div class="strategy-list">
+                  <div class="strategy-item">
+                    <div class="strategy-info">
+                      <div class="strategy-name">MASSA-USDC LP</div>
+                      <div class="strategy-protocol">MassaDEX</div>
+                    </div>
+                    <div class="strategy-metrics">
+                      <div class="strategy-apy">24.5% APY</div>
+                      <div class="strategy-allocation">$3,456</div>
+                    </div>
+                  </div>
+                  <div class="strategy-item">
+                    <div class="strategy-info">
+                      <div class="strategy-name">USDC Lending</div>
+                      <div class="strategy-protocol">MassaLend</div>
+                    </div>
+                    <div class="strategy-metrics">
+                      <div class="strategy-apy">12.8% APY</div>
+                      <div class="strategy-allocation">$2,890</div>
+                    </div>
+                  </div>
+                  <div class="strategy-item">
+                    <div class="strategy-info">
+                      <div class="strategy-name">MASSA Staking</div>
+                      <div class="strategy-protocol">Massa Network</div>
+                    </div>
+                    <div class="strategy-metrics">
+                      <div class="strategy-apy">8.2% APY</div>
+                      <div class="strategy-allocation">$6,110</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rewards -->
+            <div class="card rewards-card">
+              <div class="card-header">
+                <h3 class="card-title">Rewards</h3>
+                <div class="card-icon">🎁</div>
+              </div>
+              <div class="card-content">
+                <div class="rewards-summary">
+                  <div class="reward-item">
+                    <div class="reward-token">VAULT</div>
+                    <div class="reward-amount">156.78</div>
+                    <div class="reward-value">$234.56</div>
+                  </div>
+                  <div class="reward-item">
+                    <div class="reward-token">MASSA</div>
+                    <div class="reward-amount">12.34</div>
+                    <div class="reward-value">$45.67</div>
+                  </div>
+                </div>
+                <button class="btn btn-secondary claim-btn">Claim All Rewards</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Strategies Section -->
+      <section id="strategies" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Available Strategies</h2>
+            <p class="section-subtitle">Discover high-yield opportunities across the Massa ecosystem</p>
+          </div>
+
+          <div class="strategies-grid">
+            <div class="strategy-card">
+              <div class="strategy-header">
+                <div class="strategy-protocol-logo">🔄</div>
+                <div class="strategy-details">
+                  <h3 class="strategy-title">Liquidity Provision</h3>
+                  <p class="strategy-protocol">MassaDEX</p>
+                </div>
+                <div class="strategy-apy-badge">15-35% APY</div>
+              </div>
+              <div class="strategy-description">
+                Provide liquidity to high-volume trading pairs and earn fees plus farming rewards.
+              </div>
+              <div class="strategy-metrics-grid">
+                <div class="metric">
+                  <div class="metric-label">TVL</div>
+                  <div class="metric-value">$1.2M</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Risk</div>
+                  <div class="metric-value risk-medium">Medium</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Auto-Compound</div>
+                  <div class="metric-value">✓</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="strategy-card">
+              <div class="strategy-header">
+                <div class="strategy-protocol-logo">🏦</div>
+                <div class="strategy-details">
+                  <h3 class="strategy-title">Lending Protocol</h3>
+                  <p class="strategy-protocol">MassaLend</p>
+                </div>
+                <div class="strategy-apy-badge">8-18% APY</div>
+              </div>
+              <div class="strategy-description">
+                Lend assets to borrowers and earn stable interest rates with minimal impermanent loss risk.
+              </div>
+              <div class="strategy-metrics-grid">
+                <div class="metric">
+                  <div class="metric-label">TVL</div>
+                  <div class="metric-value">$800K</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Risk</div>
+                  <div class="metric-value risk-low">Low</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Auto-Compound</div>
+                  <div class="metric-value">✓</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="strategy-card">
+              <div class="strategy-header">
+                <div class="strategy-protocol-logo">⚡</div>
+                <div class="strategy-details">
+                  <h3 class="strategy-title">Network Staking</h3>
+                  <p class="strategy-protocol">Massa Network</p>
+                </div>
+                <div class="strategy-apy-badge">6-12% APY</div>
+              </div>
+              <div class="strategy-description">
+                Stake MASSA tokens to secure the network and earn consistent validator rewards.
+              </div>
+              <div class="strategy-metrics-grid">
+                <div class="metric">
+                  <div class="metric-label">TVL</div>
+                  <div class="metric-value">$2.1M</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Risk</div>
+                  <div class="metric-value risk-low">Low</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Auto-Compound</div>
+                  <div class="metric-value">✓</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Governance Section -->
+      <section id="governance" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Governance</h2>
+            <p class="section-subtitle">Shape the future of AutoVault through decentralized governance</p>
+          </div>
+
+          <div class="governance-stats">
+            <div class="gov-stat">
+              <div class="gov-stat-value">1,234,567</div>
+              <div class="gov-stat-label">Total VAULT Staked</div>
+            </div>
+            <div class="gov-stat">
+              <div class="gov-stat-value">89.2%</div>
+              <div class="gov-stat-label">Participation Rate</div>
+            </div>
+            <div class="gov-stat">
+              <div class="gov-stat-value">23</div>
+              <div class="gov-stat-label">Active Proposals</div>
+            </div>
+          </div>
+
+          <div class="proposals-container">
+            <div class="proposals-header">
+              <h3>Active Proposals</h3>
+              <button class="btn btn-primary">Create Proposal</button>
+            </div>
+
+            <div class="proposal-card">
+              <div class="proposal-header">
+                <div class="proposal-status active">Active</div>
+                <div class="proposal-id">#AV-001</div>
+              </div>
+              <h4 class="proposal-title">Add Yield Farming Strategy for MASSA-ETH Pair</h4>
+              <p class="proposal-description">
+                Proposal to integrate a new yield farming strategy for the MASSA-ETH liquidity pair on MassaDEX, 
+                targeting an estimated 28% APY with medium risk profile.
+              </p>
+              <div class="proposal-metrics">
+                <div class="proposal-votes">
+                  <div class="vote-bar">
+                    <div class="vote-for" style="width: 78%;"></div>
+                  </div>
+                  <div class="vote-stats">
+                    <span class="vote-for-text">For: 78% (456,789 VAULT)</span>
+                    <span class="vote-against-text">Against: 22% (129,456 VAULT)</span>
+                  </div>
+                </div>
+                <div class="proposal-actions">
+                  <button class="btn btn-success">Vote For</button>
+                  <button class="btn btn-danger">Vote Against</button>
+                </div>
+              </div>
+              <div class="proposal-footer">
+                <span class="proposal-time">Ends in 2 days, 14 hours</span>
+                <span class="proposal-quorum">Quorum: 85% reached</span>
+              </div>
+            </div>
+
+            <div class="proposal-card">
+              <div class="proposal-header">
+                <div class="proposal-status pending">Pending</div>
+                <div class="proposal-id">#AV-002</div>
+              </div>
+              <h4 class="proposal-title">Adjust Risk Parameters for Conservative Profile</h4>
+              <p class="proposal-description">
+                Proposal to update the risk parameters for the conservative investment profile to reduce 
+                maximum allocation to high-volatility assets from 20% to 15%.
+              </p>
+              <div class="proposal-metrics">
+                <div class="proposal-votes">
+                  <div class="vote-bar">
+                    <div class="vote-for" style="width: 92%;"></div>
+                  </div>
+                  <div class="vote-stats">
+                    <span class="vote-for-text">For: 92% (234,567 VAULT)</span>
+                    <span class="vote-against-text">Against: 8% (20,123 VAULT)</span>
+                  </div>
+                </div>
+                <div class="proposal-actions">
+                  <button class="btn btn-success">Vote For</button>
+                  <button class="btn btn-danger">Vote Against</button>
+                </div>
+              </div>
+              <div class="proposal-footer">
+                <span class="proposal-time">Ends in 5 days, 8 hours</span>
+                <span class="proposal-quorum">Quorum: 45% reached</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analytics Section -->
+      <section id="analytics" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Protocol Analytics</h2>
+            <p class="section-subtitle">Real-time insights into AutoVault's performance</p>
+          </div>
+
+          <div class="analytics-grid">
+            <div class="analytics-card">
+              <div class="analytics-header">
+                <h3>Total Value Locked</h3>
+                <div class="analytics-period">
+                  <button class="period-btn active">24H</button>
+                  <button class="period-btn">7D</button>
+                  <button class="period-btn">30D</button>
+                </div>
+              </div>
+              <div class="analytics-value">$2,456,789</div>
+              <div class="analytics-change positive">+12.5% (+$273,456)</div>
+              <div class="analytics-chart">
+                <canvas id="tvlChart" width="400" height="200"></canvas>
+              </div>
+            </div>
+
+            <div class="analytics-card">
+              <div class="analytics-header">
+                <h3>Average APY</h3>
+                <div class="analytics-period">
+                  <button class="period-btn active">24H</button>
+                  <button class="period-btn">7D</button>
+                  <button class="period-btn">30D</button>
+                </div>
+              </div>
+              <div class="analytics-value">18.7%</div>
+              <div class="analytics-change positive">+2.3%</div>
+              <div class="analytics-chart">
+                <canvas id="apyChart" width="400" height="200"></canvas>
+              </div>
+            </div>
+
+            <div class="analytics-card">
+              <div class="analytics-header">
+                <h3>Active Users</h3>
+                <div class="analytics-period">
+                  <button class="period-btn active">24H</button>
+                  <button class="period-btn">7D</button>
+                  <button class="period-btn">30D</button>
+                </div>
+              </div>
+              <div class="analytics-value">1,247</div>
+              <div class="analytics-change positive">+89 (+7.7%)</div>
+              <div class="analytics-chart">
+                <canvas id="usersChart" width="400" height="200"></canvas>
+              </div>
+            </div>
+
+            <div class="analytics-card">
+              <div class="analytics-header">
+                <h3>Strategy Performance</h3>
+              </div>
+              <div class="strategy-performance-list">
+                <div class="performance-item">
+                  <div class="performance-strategy">MASSA-USDC LP</div>
+                  <div class="performance-apy">24.5%</div>
+                  <div class="performance-change positive">+3.2%</div>
+                </div>
+                <div class="performance-item">
+                  <div class="performance-strategy">USDC Lending</div>
+                  <div class="performance-apy">12.8%</div>
+                  <div class="performance-change positive">+0.8%</div>
+                </div>
+                <div class="performance-item">
+                  <div class="performance-strategy">MASSA Staking</div>
+                  <div class="performance-apy">8.2%</div>
+                  <div class="performance-change neutral">0.0%</div>
+                </div>
+                <div class="performance-item">
+                  <div class="performance-strategy">ETH-USDT LP</div>
+                  <div class="performance-apy">19.3%</div>
+                  <div class="performance-change negative">-1.5%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="logo">
+              <div class="logo-icon">🏦</div>
+              <span class="logo-text">AutoVault</span>
+            </div>
+            <p class="footer-description">
+              Autonomous DeFi yield optimization on the Massa Network
+            </p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-section">
+              <h4>Protocol</h4>
+              <a href="#">Documentation</a>
+              <a href="#">Security</a>
+              <a href="#">Audits</a>
+            </div>
+            <div class="footer-section">
+              <h4>Community</h4>
+              <a href="#">Discord</a>
+              <a href="#">Twitter</a>
+              <a href="#">Telegram</a>
+            </div>
+            <div class="footer-section">
+              <h4>Developers</h4>
+              <a href="#">GitHub</a>
+              <a href="#">API</a>
+              <a href="#">Bug Bounty</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 AutoVault Protocol. Built on Massa Network.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Processing transaction...</div>
+    </div>
+  </body>
+</html>
